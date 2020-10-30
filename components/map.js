@@ -11,6 +11,7 @@ export default class Map extends Component {
         }
     }
 
+    //Get data fro API
     componentDidMount() {
         fetch('https://corona.lmao.ninja/v2/jhucsse')
           .then((response) => response.json())
@@ -23,6 +24,7 @@ export default class Map extends Component {
           });
     }
 
+    //Render the list of locations fetched from API
     mapMarkers = () => {
         return this.state.data.map((data, index) => <Marker
           key={index}
